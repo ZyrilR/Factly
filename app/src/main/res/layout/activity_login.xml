@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingHorizontal="40dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/imageviewLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="-12dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textviewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Welcome to Factly!"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textviewSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's explore something interesting."
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:drawableStart="@drawable/usericon"
+        android:drawablePadding="12dp"
+        android:hint="Username"
+        android:textSize="16sp"
+        android:paddingStart="15dp"
+        android:textColor="#FFD54F"
+        android:textColorHint="#FFD54F"
+        android:elevation="1dp"
+        android:translationZ="1dp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_rounded"
+        android:drawableStart="@drawable/lockicon"
+        android:drawablePadding="20dp"
+        android:paddingStart="15dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        android:textColor="#FFD54F"
+        android:textColorHint="#FFD54F"
+        android:elevation="1dp"
+        android:translationZ="1dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxShowPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Password"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFD54F"
+        android:text="Sign in"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:elevation="1dp"
+        android:translationZ="1dp" />
+
+    <TextView
+        android:id="@+id/textviewNoAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textColor="#555555"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/textviewCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" Create an Account"
+        android:textColor="#FFD54F"
+        android:textStyle="bold" />
+
+</LinearLayout>

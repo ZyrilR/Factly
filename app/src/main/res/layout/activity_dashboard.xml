@@ -7,6 +7,7 @@
     android:paddingHorizontal="40dp"
     android:background="#FFFFFF">
 
+    <!-- Header: logo from Factly design -->
     <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="wrap_content"
@@ -17,44 +18,109 @@
         android:adjustViewBounds="true"
         android:src="@drawable/logo" />
 
+    <!-- Welcome text -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="24dp"
         android:text="Welcome!"
         android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold" />
 
+    <!-- Topic label -->
+    <TextView
+        android:id="@+id/textviewTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:textColor="#FFD54F"
+        android:textStyle="bold" />
 
+    <!-- Fact card -->
+    <TextView
+        android:id="@+id/textviewFact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_rounded"
+        android:padding="20dp"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:lineSpacingMultiplier="1.4"
+        android:elevation="1dp"
+        android:translationZ="1dp" />
+
+    <!-- Action buttons -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        android:backgroundTint="#FFD54F"
+        android:text="Save to Favorites"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:elevation="1dp"
+        android:translationZ="2dp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFD54F"
+        android:text="Next Fact"
+        android:textSize="14sp"
+        android:elevation="1dp"
+        android:translationZ="2dp" />
+
+    <Button
+        android:id="@+id/btnFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFD54F"
+        android:text="View Favorites"
+        android:textSize="14sp"
+        android:elevation="1dp"
+        android:translationZ="2dp" />
+
+    <!-- Nav buttons from Factly design -->
     <Button
         android:id="@+id/buttonProfile"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:paddingStart="80dp"
-        android:paddingEnd="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
         android:backgroundTint="#FFD54F"
         android:text="Profile"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:elevation="1dp"
         android:translationZ="2dp" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FFFFFF"
         android:textColor="#FFD54F"
-        android:elevation="1dp"
-        android:paddingStart="80dp"
-        android:paddingEnd="80dp"
         android:text="Logout"
-        android:textSize="16sp"
-        android:translationZ="4dp"/>
-
+        android:textSize="14sp"
+        android:elevation="1dp"
+        android:translationZ="2dp" />
 
 </LinearLayout>

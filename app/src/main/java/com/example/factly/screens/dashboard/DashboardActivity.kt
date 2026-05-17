@@ -3,7 +3,8 @@ package com.example.factly.screens.dashboard
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.example.factly.R
@@ -11,6 +12,7 @@ import com.example.factly.data.models.Fact
 import com.example.factly.screens.favorites.FavoritesActivity
 import com.example.factly.screens.login.LoginActivity
 import com.example.factly.screens.profile.ProfileActivity
+import com.example.factly.screens.topics.TopicSelectionActivity
 
 class DashboardActivity : Activity(), DashboardContract.View {
 
@@ -28,41 +30,45 @@ class DashboardActivity : Activity(), DashboardContract.View {
         tvTopic   = findViewById(R.id.textviewTopic)
         tvFact    = findViewById(R.id.textviewFact)
 
-        val btnNext      = findViewById<Button>(R.id.btnNext)
-        val btnSave      = findViewById<Button>(R.id.btnSave)
-        val btnFavorites = findViewById<Button>(R.id.btnFavorites)
-        val btnProfile   = findViewById<Button>(R.id.buttonProfile)
-        val btnLogout    = findViewById<Button>(R.id.buttonLogout)
+        findViewById<android.widget.Button>(R.id.btnNext).setOnClickListener {
+            presenter.onNextClicked()
+        }
 
-        btnNext.setOnClickListener      { presenter.onNextClicked() }
-        btnSave.setOnClickListener      { presenter.onSaveClicked() }
-        btnFavorites.setOnClickListener { presenter.onFavoritesClicked() }
-        btnProfile.setOnClickListener   { presenter.onProfileClicked() }
-        btnLogout.setOnClickListener    { presenter.onLogoutClicked() }
+        findViewById<ImageView>(R.id.imageViewStar).setOnClickListener {
+            presenter.onSaveClicked()
+        }
+
+        findViewById<ImageView>(R.id.imageViewMenu).setOnClickListener {
+            startActivity(Intent(this, TopicSelectionActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.navFavorites).setOnClickListener {
+            presenter.onFavoritesClicked()
+        }
+
+        findViewById<LinearLayout>(R.id.navProfile).setOnClickListener {
+            presenter.onProfileClicked()
+        }
 
         presenter.loadFact()
     }
 
     override fun displayFact(fact: Fact) {
         tvFact.text  = fact.content
-        tvTopic.text = "[${fact.topic}]"
+        tvTopic.text = fact.topic
     }
 
-    override fun showSaved() {
+    override fun showSaved() =
         Toast.makeText(this, "Saved to Favorites!", Toast.LENGTH_SHORT).show()
-    }
 
-    override fun showError(message: String) {
+    override fun showError(message: String) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 
-    override fun navigateToProfile() {
+    override fun navigateToProfile() =
         startActivity(Intent(this, ProfileActivity::class.java))
-    }
 
-    override fun navigateToFavorites() {
+    override fun navigateToFavorites() =
         startActivity(Intent(this, FavoritesActivity::class.java))
-    }
 
     override fun navigateToLogin() {
         startActivity(Intent(this, LoginActivity::class.java))

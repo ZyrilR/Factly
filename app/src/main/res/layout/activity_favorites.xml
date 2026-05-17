@@ -5,42 +5,126 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Header bar matching profile screen style -->
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:background="#FFD54F">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imageviewBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/usericon"
+            android:padding="4dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="My Favorites"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Favorites"
             android:textColor="#000000"
             android:textSize="22sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Long press a fact to remove it"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            android:alpha="0.6" />
-
     </LinearLayout>
+
+    <!-- Search bar -->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/input_bg"
+        android:drawableStart="@drawable/usericon"
+        android:drawablePadding="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:hint="Search your saved facts"
+        android:textSize="14sp"
+        android:textColorHint="#BBBBBB"
+        android:inputType="text" />
 
     <ListView
         android:id="@+id/listViewFavorites"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="40dp"
-        android:paddingTop="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="20dp"
         android:clipToPadding="false"
         android:divider="@null"
         android:dividerHeight="0dp" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navFavorites"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorites"
+                android:textSize="11sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

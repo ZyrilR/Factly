@@ -3,124 +3,193 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:paddingHorizontal="40dp"
     android:background="#FFFFFF">
 
-    <!-- Header: logo from Factly design -->
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="-12dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/logo" />
-
-    <!-- Welcome text -->
-    <TextView
-        android:id="@+id/textViewTitle"
+    <!-- Top bar -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Welcome!"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp">
 
-    <!-- Topic label -->
-    <TextView
-        android:id="@+id/textviewTopic"
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/imageViewMenu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/usericon"
+            android:padding="2dp" />
+    </LinearLayout>
+
+    <!-- Scrollable content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="12sp"
-        android:textColor="#FFD54F"
-        android:textStyle="bold" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="24dp"
+        android:clipToPadding="false">
 
-    <!-- Fact card -->
-    <TextView
-        android:id="@+id/textviewFact"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Welcome!"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Your Fact for today!"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <!-- Fact card -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textviewFact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:background="@drawable/card_bg"
+                    android:padding="24dp"
+                    android:paddingEnd="56dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:lineSpacingMultiplier="1.5"
+                    android:elevation="2dp" />
+
+                <!-- Star / Save icon -->
+                <ImageView
+                    android:id="@+id/imageViewStar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/usericon"
+                    android:padding="4dp" />
+
+            </FrameLayout>
+
+            <!-- Topic badge -->
+            <TextView
+                android:id="@+id/textviewTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/badge_food"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <!-- Next Fact button -->
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#FFD54F"
+                android:text="Next Fact  ›"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:cornerRadius="28dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_rounded"
-        android:padding="20dp"
-        android:textSize="16sp"
-        android:textColor="#333333"
-        android:lineSpacingMultiplier="1.4"
-        android:elevation="1dp"
-        android:translationZ="1dp" />
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
 
-    <!-- Action buttons -->
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:paddingStart="60dp"
-        android:paddingEnd="60dp"
-        android:backgroundTint="#FFD54F"
-        android:text="Save to Favorites"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:elevation="1dp"
-        android:translationZ="2dp" />
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="11sp"
+                android:textColor="#000000" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:paddingStart="60dp"
-        android:paddingEnd="60dp"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#FFD54F"
-        android:text="Next Fact"
-        android:textSize="14sp"
-        android:elevation="1dp"
-        android:translationZ="2dp" />
+        <LinearLayout
+            android:id="@+id/navFavorites"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorites"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnFavorites"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:paddingStart="60dp"
-        android:paddingEnd="60dp"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#FFD54F"
-        android:text="View Favorites"
-        android:textSize="14sp"
-        android:elevation="1dp"
-        android:translationZ="2dp" />
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA" />
+        </LinearLayout>
 
-    <!-- Nav buttons from Factly design -->
-    <Button
-        android:id="@+id/buttonProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:paddingStart="60dp"
-        android:paddingEnd="60dp"
-        android:backgroundTint="#FFD54F"
-        android:text="Profile"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:elevation="1dp"
-        android:translationZ="2dp" />
-
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#FFD54F"
-        android:text="Logout"
-        android:textSize="14sp"
-        android:elevation="1dp"
-        android:translationZ="2dp" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.factly.screens.login
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -17,7 +18,6 @@ class LoginActivity : Activity(), LoginContract.View {
     private lateinit var presenter: LoginPresenter
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Top bar -->
+    <!-- Top bar: logo + hamburger -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,12 +14,12 @@
         android:gravity="center_vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="20dp"
-        android:paddingBottom="12dp">
+        android:paddingBottom="14dp">
 
         <ImageView
             android:id="@+id/imageViewLogo"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="44dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:scaleType="fitStart"
@@ -32,7 +31,14 @@
             android:layout_height="32dp"
             android:src="@drawable/usericon"
             android:padding="2dp" />
+
     </LinearLayout>
+
+    <!-- Thin divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE" />
 
     <!-- Scrollable content -->
     <ScrollView
@@ -40,6 +46,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:paddingHorizontal="24dp"
+        android:paddingTop="24dp"
         android:clipToPadding="false">
 
         <LinearLayout
@@ -51,7 +58,6 @@
                 android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="Welcome!"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -62,42 +68,51 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Your Fact for today!"
-                android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textColor="#222222"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <!-- Fact card -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="18dp">
 
-                <TextView
-                    android:id="@+id/textviewFact"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="200dp"
+                    android:orientation="vertical"
                     android:background="@drawable/card_bg"
-                    android:padding="24dp"
-                    android:paddingEnd="56dp"
+                    android:elevation="2dp"
+                    android:minHeight="180dp"
                     android:gravity="center"
-                    android:textSize="16sp"
-                    android:textColor="#333333"
-                    android:lineSpacingMultiplier="1.5"
-                    android:elevation="2dp" />
+                    android:padding="20dp"
+                    android:paddingEnd="44dp">
 
-                <!-- Star / Save icon -->
+                    <TextView
+                        android:id="@+id/textviewFact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#333333"
+                        android:lineSpacingMultiplier="1.5" />
+
+                </LinearLayout>
+
+                <!-- Star icon, top-right of card -->
                 <ImageView
                     android:id="@+id/imageViewStar"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_gravity="top|end"
-                    android:layout_margin="12dp"
+                    android:layout_margin="10dp"
                     android:src="@drawable/usericon"
-                    android:padding="4dp" />
+                    android:padding="2dp" />
 
             </FrameLayout>
 
-            <!-- Topic badge -->
+            <!-- Topic badge below card -->
             <TextView
                 android:id="@+id/textviewTopic"
                 android:layout_width="wrap_content"
@@ -105,7 +120,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/badge_food"
                 android:paddingHorizontal="14dp"
-                android:paddingVertical="4dp"
+                android:paddingVertical="5dp"
                 android:textSize="12sp"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
@@ -115,7 +130,7 @@
                 android:id="@+id/btnNext"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="#FFD54F"
                 android:text="Next Fact  ›"
@@ -130,7 +145,7 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="68dp"
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:elevation="8dp">
@@ -142,16 +157,10 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="11sp"
-                android:textColor="#000000" />
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Home" android:textSize="11sp"
+                android:textColor="#000000" android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -161,15 +170,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Favorites"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Favorites" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 
@@ -180,15 +183,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Profile" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Header -->
+    <!-- Header: back arrow + title -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +15,15 @@
         android:paddingTop="20dp"
         android:paddingBottom="16dp">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Favorites"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/imageviewBack"
             android:layout_width="32dp"
@@ -22,40 +31,46 @@
             android:src="@drawable/usericon"
             android:padding="4dp" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:text="Favorites"
-            android:textColor="#000000"
-            android:textSize="22sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Search bar -->
-    <EditText
-        android:id="@+id/editTextSearch"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/usericon"
-        android:drawablePadding="10dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:hint="Search your saved facts"
-        android:textSize="14sp"
-        android:textColorHint="#BBBBBB"
-        android:inputType="text" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
 
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/usericon" />
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:hint="Search your saved facts"
+            android:textSize="14sp"
+            android:textColorHint="#BBBBBB"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <!-- List -->
     <ListView
         android:id="@+id/listViewFavorites"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:paddingHorizontal="20dp"
+        android:paddingBottom="8dp"
         android:clipToPadding="false"
         android:divider="@null"
         android:dividerHeight="0dp" />
@@ -63,7 +78,7 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="68dp"
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:elevation="8dp">
@@ -75,15 +90,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Home" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 
@@ -94,16 +103,10 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Favorites"
-                android:textSize="11sp"
-                android:textColor="#000000" />
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Favorites" android:textSize="11sp"
+                android:textColor="#000000" android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -113,15 +116,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Profile" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 

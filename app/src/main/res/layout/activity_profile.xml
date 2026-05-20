@@ -6,49 +6,47 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Yellow header -->
+    <!-- Yellow header + overlapping avatar via FrameLayout -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="#FFD54F">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textviewProfileTitle"
-            android:layout_width="wrap_content"
+        <!-- Yellow band -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Profile"
-            android:textColor="#000000"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:background="#FFD54F"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="48dp"
+            android:paddingBottom="52dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Avatar circle overlapping bottom of yellow band -->
+        <ImageView
+            android:id="@+id/imageviewProfileCircle"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="-45dp"
+            android:background="@drawable/circle_white_bg"
+            android:elevation="4dp"
+            android:src="@drawable/usericon"
+            android:padding="18dp"
+            android:scaleType="centerInside" />
+
     </FrameLayout>
 
-    <!-- Avatar circle overlapping header -->
-    <ImageView
-        android:id="@+id/imageviewProfileCircle"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-45dp"
-        android:background="@drawable/circle_white_bg"
-        android:elevation="4dp"
-        android:src="@drawable/usericon"
-        android:padding="16dp"
-        android:scaleType="centerInside" />
-
-    <!-- Username label below avatar -->
-    <TextView
-        android:id="@+id/textviewDisplayName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:text="ZyrilR"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <!-- Fields -->
+    <!-- White body below -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -58,10 +56,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="28dp"
-            android:paddingTop="20dp"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="60dp"
             android:paddingBottom="24dp">
 
+            <!-- Username label -->
+            <TextView
+                android:id="@+id/textviewDisplayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:text="ZyrilR"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Full Name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,72 +80,112 @@
                 android:textColor="#888888"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/editTextFullName"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:drawableStart="@drawable/usericon"
-                android:drawablePadding="10dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textSize="15sp"
-                android:textColor="#FFD54F"
-                android:textColorHint="#BBBBBB"
-                android:hint="Full Name"
-                android:inputType="textPersonName" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
 
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/usericon" />
+
+                <EditText
+                    android:id="@+id/editTextFullName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <!-- Email -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="16dp"
                 android:text="Email"
                 android:textColor="#888888"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/editTextEmail"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:drawableStart="@drawable/usericon"
-                android:drawablePadding="10dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textSize="15sp"
-                android:textColor="#FFD54F"
-                android:textColorHint="#BBBBBB"
-                android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
 
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/usericon" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <!-- Password -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="16dp"
                 android:text="Password"
                 android:textColor="#888888"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/editTextPassword"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:drawableStart="@drawable/usericon"
-                android:drawablePadding="10dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textSize="15sp"
-                android:textColor="#FFD54F"
-                android:textColorHint="#BBBBBB"
-                android:hint="Password"
-                android:inputType="textPassword" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
 
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/usericon" />
 
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
 
+            </LinearLayout>
+
+            <!-- Back to Dashboard button -->
             <Button
                 android:id="@+id/buttonProfile"
                 android:layout_width="match_parent"
@@ -147,6 +198,7 @@
                 android:textStyle="bold"
                 app:cornerRadius="26dp" />
 
+            <!-- Log out button -->
             <Button
                 android:id="@+id/buttonLogout"
                 android:layout_width="match_parent"
@@ -157,9 +209,9 @@
                 android:textColor="#FFD54F"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:strokeColor="#E0E0E0"
-                app:strokeWidth="1dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#E0E0E0"
+                app:strokeWidth="1dp" />
 
         </LinearLayout>
     </ScrollView>
@@ -167,7 +219,7 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="68dp"
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:elevation="8dp">
@@ -179,15 +231,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Home" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 
@@ -198,15 +244,9 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Favorites"
-                android:textSize="11sp"
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Favorites" android:textSize="11sp"
                 android:textColor="#AAAAAA" />
         </LinearLayout>
 
@@ -217,16 +257,10 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/usericon" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="11sp"
-                android:textColor="#000000" />
+            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:text="Profile" android:textSize="11sp"
+                android:textColor="#000000" android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

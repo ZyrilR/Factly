@@ -1,71 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Inflated as a bottom-sheet overlay inside DashboardActivity -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetTopics"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#00000066"
-    android:gravity="center">
+    android:background="@drawable/rounded_top_white"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="32dp"
+    android:elevation="24dp">
 
-    <!-- Card overlay matching prototype -->
-    <LinearLayout
+    <!-- Drag handle pill -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="#DDDDDD" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Favorite Topics"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Select the categories you want to see in your fact feed.\nYou can change these anytime."
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:lineSpacingMultiplier="1.4" />
+
+    <!-- Topic chips injected dynamically -->
+    <GridLayout
+        android:id="@+id/gridTopics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/card_bg"
-        android:layout_marginHorizontal="24dp"
-        android:padding="24dp"
-        android:elevation="8dp">
+        android:layout_marginTop="16dp"
+        android:columnCount="3"
+        android:useDefaultMargins="false" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose Your Favorite Topics"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFD54F"
+        android:text="Apply"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="25dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Select the categories you want to see in your fact feed.\nYou can change these anytime."
-            android:textColor="#666666"
-            android:textSize="12sp"
-            android:lineSpacingMultiplier="1.4" />
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Back"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="#E0E0E0"
+        app:strokeWidth="1dp" />
 
-        <!-- Topic chips injected here by code -->
-        <GridLayout
-            android:id="@+id/gridTopics"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:columnCount="3"
-            android:useDefaultMargins="false" />
-
-        <Button
-            android:id="@+id/btnApply"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#FFD54F"
-            android:text="Apply"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:cornerRadius="24dp" />
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#FFFFFF"
-            android:text="Back"
-            android:textColor="#333333"
-            android:textSize="15sp"
-            android:strokeColor="#E0E0E0"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
-
-    </LinearLayout>
 </LinearLayout>

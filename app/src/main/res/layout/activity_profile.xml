@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <!-- ── Yellow header band ─────────────────────────────────────────────── -->
     <FrameLayout
         android:id="@+id/layoutYellowHeader"
         android:layout_width="0dp"
@@ -14,7 +13,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Yellow background band -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +31,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Avatar circle overlapping bottom edge of yellow band -->
         <ImageView
             android:id="@+id/imageviewProfileCircle"
             android:layout_width="90dp"
@@ -44,10 +41,9 @@
             android:elevation="4dp"
             android:padding="18dp"
             android:scaleType="centerInside"
-            android:src="@drawable/placeholder_icon" />
+            android:src="@drawable/ic_person" />
     </FrameLayout>
 
-    <!-- ── Scrollable body ────────────────────────────────────────────────── -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -65,7 +61,6 @@
             android:paddingTop="60dp"
             android:paddingBottom="24dp">
 
-            <!-- Display name -->
             <TextView
                 android:id="@+id/textviewDisplayName"
                 android:layout_width="wrap_content"
@@ -77,7 +72,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- Full Name label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,7 +91,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/placeholder_icon" />
+                    android:src="@drawable/ic_user" />
 
                 <EditText
                     android:id="@+id/editTextFullName"
@@ -113,7 +107,6 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Email label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +127,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/placeholder_icon" />
+                    android:src="@drawable/ic_email" />
 
                 <EditText
                     android:id="@+id/editTextEmail"
@@ -150,7 +143,6 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Password label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -171,7 +163,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/placeholder_icon" />
+                    android:src="@drawable/ic_lock" />
 
                 <EditText
                     android:id="@+id/editTextPassword"
@@ -187,7 +179,6 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Back to Dashboard -->
             <Button
                 android:id="@+id/buttonProfile"
                 android:layout_width="match_parent"
@@ -200,7 +191,6 @@
                 android:textStyle="bold"
                 app:cornerRadius="26dp" />
 
-            <!-- Log out -->
             <Button
                 android:id="@+id/buttonLogout"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -218,7 +208,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- ── Bottom Navigation ──────────────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
@@ -230,7 +219,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Home -->
         <LinearLayout
             android:id="@+id/navHome"
             android:layout_width="0dp"
@@ -242,7 +230,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -253,7 +241,6 @@
                 android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- Favorites -->
         <LinearLayout
             android:id="@+id/navFavorites"
             android:layout_width="0dp"
@@ -265,7 +252,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_star" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -276,7 +263,6 @@
                 android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- Profile (active) -->
         <LinearLayout
             android:id="@+id/navProfile"
             android:layout_width="0dp"
@@ -288,7 +274,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_person" />
 
             <TextView
                 android:layout_width="wrap_content"

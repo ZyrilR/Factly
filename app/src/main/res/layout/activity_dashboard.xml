@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <!-- ── Top Bar ─────────────────────────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/layoutTopBar"
         android:layout_width="0dp"
@@ -28,15 +27,13 @@
             android:scaleType="fitStart"
             android:src="@drawable/logo" />
 
-        <!-- Hamburger / topic filter icon -->
         <ImageView
             android:id="@+id/imageViewMenu"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/placeholder_icon" />
+            android:src="@drawable/ic_menu" />
     </LinearLayout>
 
-    <!-- Thin divider -->
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"
@@ -46,7 +43,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutTopBar" />
 
-    <!-- ── Scrollable body ────────────────────────────────────────────────── -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -64,7 +60,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Welcome text -->
             <TextView
                 android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
@@ -83,7 +78,6 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <!-- Fact card -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +104,6 @@
                         android:textSize="15sp" />
                 </LinearLayout>
 
-                <!-- Star / save icon — top-right of card -->
                 <ImageView
                     android:id="@+id/imageViewStar"
                     android:layout_width="36dp"
@@ -118,10 +111,9 @@
                     android:layout_gravity="top|end"
                     android:layout_margin="10dp"
                     android:padding="2dp"
-                    android:src="@drawable/placeholder_icon" />
+                    android:src="@drawable/ic_star_outline" />
             </FrameLayout>
 
-            <!-- Topic badge -->
             <TextView
                 android:id="@+id/textviewTopic"
                 android:layout_width="wrap_content"
@@ -134,7 +126,6 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <!-- Next Fact button -->
             <Button
                 android:id="@+id/btnNext"
                 android:layout_width="match_parent"
@@ -150,7 +141,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- ── Bottom Navigation ──────────────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
@@ -162,7 +152,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Home (active) -->
         <LinearLayout
             android:id="@+id/navHome"
             android:layout_width="0dp"
@@ -174,7 +163,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_home" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +175,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Favorites -->
         <LinearLayout
             android:id="@+id/navFavorites"
             android:layout_width="0dp"
@@ -198,7 +186,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_star" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -209,7 +197,6 @@
                 android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- Profile -->
         <LinearLayout
             android:id="@+id/navProfile"
             android:layout_width="0dp"
@@ -221,7 +208,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_person" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -34,6 +34,7 @@ class DashboardActivity : Activity(), DashboardContract.View {
     private lateinit var tvFact: TextView
     private lateinit var tvTopic: TextView
     private lateinit var tvWelcome: TextView
+    private lateinit var imageViewStar: ImageView
 
     private var overlayContainer: FrameLayout? = null
     private var topicSheet: View? = null
@@ -43,10 +44,11 @@ class DashboardActivity : Activity(), DashboardContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        presenter  = DashboardPresenter(this)
-        tvWelcome  = findViewById(R.id.textViewTitle)
-        tvTopic    = findViewById(R.id.textviewTopic)
-        tvFact     = findViewById(R.id.textviewFact)
+        presenter     = DashboardPresenter(this)
+        tvWelcome     = findViewById(R.id.textViewTitle)
+        tvTopic       = findViewById(R.id.textviewTopic)
+        tvFact        = findViewById(R.id.textviewFact)
+        imageViewStar = findViewById(R.id.imageViewStar)
 
         val user = UserRepository.getLoggedInUser()
         if (user != null) tvWelcome.text = "Welcome, ${user.username}!"
@@ -54,7 +56,7 @@ class DashboardActivity : Activity(), DashboardContract.View {
         findViewById<Button>(R.id.btnNext).setOnClickListener {
             presenter.onNextClicked()
         }
-        findViewById<ImageView>(R.id.imageViewStar).setOnClickListener {
+        imageViewStar.setOnClickListener {
             presenter.onSaveClicked()
         }
         findViewById<ImageView>(R.id.imageViewMenu).setOnClickListener {
@@ -73,10 +75,9 @@ class DashboardActivity : Activity(), DashboardContract.View {
     // ── Topic bottom-sheet overlay ────────────────────────────────────────────
 
     private fun showTopicOverlay() {
-        if (overlayContainer != null) return          // already showing
+        if (overlayContainer != null) return
         val rootView = window.decorView as ViewGroup
 
-        // Semi-transparent dim layer
         val dimView = View(this).apply {
             layoutParams = FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
@@ -94,7 +95,6 @@ class DashboardActivity : Activity(), DashboardContract.View {
         }
         container.addView(dimView)
 
-        // Inflate sheet
         val sheet = LayoutInflater.from(this)
             .inflate(R.layout.activity_topic_selection, container, false)
         val sheetParams = FrameLayout.LayoutParams(
@@ -108,12 +108,10 @@ class DashboardActivity : Activity(), DashboardContract.View {
         overlayContainer = container
         topicSheet = sheet
 
-        // Seed selections from current state
         pendingSelectedTopics.clear()
         pendingSelectedTopics.addAll(FactRepository.selectedTopics)
         buildTopicChips(sheet)
 
-        // Slide up animation
         sheet.post {
             val h = sheet.height.toFloat()
             sheet.translationY = h
@@ -200,10 +198,14 @@ class DashboardActivity : Activity(), DashboardContract.View {
     override fun displayFact(fact: Fact) {
         tvFact.text  = fact.content
         tvTopic.text = fact.topic
+        // Reset star to outline whenever a new fact loads
+        imageViewStar.setImageResource(R.drawable.ic_star_outline)
     }
 
-    override fun showSaved() =
+    override fun showSaved() {
+        imageViewStar.setImageResource(R.drawable.ic_star_filled)
         Toast.makeText(this, "Saved to Favorites!", Toast.LENGTH_SHORT).show()
+    }
 
     override fun showError(message: String) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

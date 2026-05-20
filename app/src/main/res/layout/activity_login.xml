@@ -13,7 +13,6 @@
         android:paddingTop="56dp"
         android:paddingBottom="40dp">
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/imageviewLogo"
             android:layout_width="wrap_content"
@@ -23,7 +22,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Welcome heading -->
         <TextView
             android:id="@+id/textviewWelcomeTitle"
             android:layout_width="0dp"
@@ -49,7 +47,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textviewWelcomeTitle" />
 
-        <!-- Username / Email field -->
         <LinearLayout
             android:id="@+id/layoutUsername"
             android:layout_width="0dp"
@@ -66,7 +63,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_user" />
 
             <EditText
                 android:id="@+id/editTextUsername"
@@ -82,7 +79,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Password field -->
         <LinearLayout
             android:id="@+id/layoutPassword"
             android:layout_width="0dp"
@@ -99,7 +95,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_lock" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -115,7 +111,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Show password / Forgot password row -->
         <LinearLayout
             android:id="@+id/layoutPasswordOptions"
             android:layout_width="0dp"
@@ -144,7 +139,6 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Sign In button -->
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="0dp"
@@ -160,7 +154,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutPasswordOptions" />
 
-        <!-- Register prompt -->
         <LinearLayout
             android:id="@+id/layoutRegisterPrompt"
             android:layout_width="wrap_content"

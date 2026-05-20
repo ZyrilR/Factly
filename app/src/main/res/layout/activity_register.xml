@@ -13,17 +13,15 @@
         android:paddingTop="48dp"
         android:paddingBottom="40dp">
 
-        <!-- Back arrow -->
         <ImageView
             android:id="@+id/imageviewBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:padding="4dp"
-            android:src="@drawable/placeholder_icon"
+            android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/imageviewLogo"
             android:layout_width="wrap_content"
@@ -35,7 +33,6 @@
             app:layout_constraintStart_toEndOf="@id/imageviewBack"
             app:layout_constraintTop_toTopOf="@id/imageviewBack" />
 
-        <!-- Title -->
         <TextView
             android:id="@+id/textviewTitle"
             android:layout_width="0dp"
@@ -61,7 +58,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textviewTitle" />
 
-        <!-- Full Name -->
         <LinearLayout
             android:id="@+id/layoutFullName"
             android:layout_width="0dp"
@@ -78,7 +74,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_user" />
 
             <EditText
                 android:id="@+id/editTextFullName"
@@ -94,7 +90,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Username -->
         <LinearLayout
             android:id="@+id/layoutUsername"
             android:layout_width="0dp"
@@ -111,7 +106,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_user" />
 
             <EditText
                 android:id="@+id/editTextUsername"
@@ -127,7 +122,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Email -->
         <LinearLayout
             android:id="@+id/layoutEmail"
             android:layout_width="0dp"
@@ -144,7 +138,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_email" />
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -160,7 +154,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Password -->
         <LinearLayout
             android:id="@+id/layoutPassword"
             android:layout_width="0dp"
@@ -177,7 +170,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_lock" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -193,7 +186,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Confirm Password -->
         <LinearLayout
             android:id="@+id/layoutConfirmPassword"
             android:layout_width="0dp"
@@ -210,7 +202,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/placeholder_icon" />
+                android:src="@drawable/ic_lock" />
 
             <EditText
                 android:id="@+id/editTextConfirmPassword"
@@ -226,7 +218,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Get Started button -->
         <Button
             android:id="@+id/buttonGetStarted"
             android:layout_width="0dp"
@@ -242,7 +233,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutConfirmPassword" />
 
-        <!-- Login prompt -->
         <LinearLayout
             android:id="@+id/layoutLoginPrompt"
             android:layout_width="wrap_content"

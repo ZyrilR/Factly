@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Yellow header + overlapping avatar via FrameLayout -->
+    <!-- ── Yellow header band ─────────────────────────────────────────────── -->
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/layoutYellowHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Yellow band -->
+        <!-- Yellow background band -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFD54F"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:paddingTop="48dp"
             android:paddingBottom="52dp">
 
@@ -28,10 +31,9 @@
                 android:textColor="#000000"
                 android:textSize="22sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
-        <!-- Avatar circle overlapping bottom of yellow band -->
+        <!-- Avatar circle overlapping bottom edge of yellow band -->
         <ImageView
             android:id="@+id/imageviewProfileCircle"
             android:layout_width="90dp"
@@ -40,17 +42,20 @@
             android:layout_marginBottom="-45dp"
             android:background="@drawable/circle_white_bg"
             android:elevation="4dp"
-            android:src="@drawable/usericon"
             android:padding="18dp"
-            android:scaleType="centerInside" />
-
+            android:scaleType="centerInside"
+            android:src="@drawable/placeholder_icon" />
     </FrameLayout>
 
-    <!-- White body below -->
+    <!-- ── Scrollable body ────────────────────────────────────────────────── -->
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutYellowHeader">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,7 +65,7 @@
             android:paddingTop="60dp"
             android:paddingBottom="24dp">
 
-            <!-- Username label -->
+            <!-- Display name -->
             <TextView
                 android:id="@+id/textviewDisplayName"
                 android:layout_width="wrap_content"
@@ -72,7 +77,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- Full Name -->
+            <!-- Full Name label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,31 +90,30 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="16dp">
 
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/usericon" />
+                    android:src="@drawable/placeholder_icon" />
 
                 <EditText
                     android:id="@+id/editTextFullName"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginStart="10dp"
+                    android:layout_weight="1"
                     android:background="@null"
-                    android:textSize="15sp"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
                     android:textColor="#333333"
                     android:textColorHint="#BBBBBB"
-                    android:hint="Full Name"
-                    android:inputType="textPersonName" />
-
+                    android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Email -->
+            <!-- Email label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,31 +127,30 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="16dp">
 
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/usericon" />
+                    android:src="@drawable/placeholder_icon" />
 
                 <EditText
                     android:id="@+id/editTextEmail"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginStart="10dp"
+                    android:layout_weight="1"
                     android:background="@null"
-                    android:textSize="15sp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:textColor="#333333"
                     android:textColorHint="#BBBBBB"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress" />
-
+                    android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Password -->
+            <!-- Password label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -161,31 +164,30 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/input_bg"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="16dp">
 
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/usericon" />
+                    android:src="@drawable/placeholder_icon" />
 
                 <EditText
                     android:id="@+id/editTextPassword"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginStart="10dp"
+                    android:layout_weight="1"
                     android:background="@null"
-                    android:textSize="15sp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
                     android:textColor="#333333"
                     android:textColorHint="#BBBBBB"
-                    android:hint="Password"
-                    android:inputType="textPassword" />
-
+                    android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- Back to Dashboard button -->
+            <!-- Back to Dashboard -->
             <Button
                 android:id="@+id/buttonProfile"
                 android:layout_width="match_parent"
@@ -198,9 +200,10 @@
                 android:textStyle="bold"
                 app:cornerRadius="26dp" />
 
-            <!-- Log out button -->
+            <!-- Log out -->
             <Button
                 android:id="@+id/buttonLogout"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="10dp"
@@ -209,60 +212,93 @@
                 android:textColor="#FFD54F"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 app:strokeColor="#E0E0E0"
                 app:strokeWidth="1dp" />
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- ── Bottom Navigation ──────────────────────────────────────────────── -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
         android:layout_height="68dp"
-        android:orientation="horizontal"
         android:background="#FFFFFF"
-        android:elevation="8dp">
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <!-- Home -->
         <LinearLayout
             android:id="@+id/navHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="3dp" android:text="Home" android:textSize="11sp"
-                android:textColor="#AAAAAA" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/placeholder_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Home"
+                android:textColor="#AAAAAA"
+                android:textSize="11sp" />
         </LinearLayout>
 
+        <!-- Favorites -->
         <LinearLayout
             android:id="@+id/navFavorites"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="3dp" android:text="Favorites" android:textSize="11sp"
-                android:textColor="#AAAAAA" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/placeholder_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Favorites"
+                android:textColor="#AAAAAA"
+                android:textSize="11sp" />
         </LinearLayout>
 
+        <!-- Profile (active) -->
         <LinearLayout
             android:id="@+id/navProfile"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/usericon" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="3dp" android:text="Profile" android:textSize="11sp"
-                android:textColor="#000000" android:textStyle="bold" />
-        </LinearLayout>
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/placeholder_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

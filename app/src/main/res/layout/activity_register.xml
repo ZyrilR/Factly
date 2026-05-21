@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:padding="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="28dp"
-        android:paddingTop="48dp"
+        android:paddingTop="32dp"
         android:paddingBottom="40dp">
 
         <!-- Top row: Logo + Back arrow -->
@@ -23,10 +24,10 @@
             <ImageView
                 android:id="@+id/imageviewLogo"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
+                android:layout_height="100dp"
                 android:adjustViewBounds="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+                android:layout_marginLeft="-16dp"
+                android:scaleType="fitStart"
                 android:src="@drawable/logo" />
 
             <ImageView
@@ -44,7 +45,7 @@
             android:id="@+id/textviewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:text="Create Your Account"
             android:textColor="#000000"
             android:textSize="22sp"
@@ -224,12 +225,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? "
+                android:text="Already have an account?"
                 android:textColor="#888888"
                 android:textSize="14sp" />
 
@@ -237,6 +239,7 @@
                 android:id="@+id/textviewLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Log in"
                 android:textColor="#FFD54F"
                 android:textSize="14sp"

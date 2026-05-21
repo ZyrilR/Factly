@@ -146,7 +146,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="16dp"
                 android:text="Your Fact for today!"
                 android:textAlignment="center"
                 android:textColor="#222222"
@@ -156,52 +156,60 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="12dp"
                 android:clipToPadding="false"
                 android:clipChildren="false"
                 android:padding="16dp">
 
-                <LinearLayout
+                <!-- Fact card — RelativeLayout so we can anchor badge bottom-left -->
+                <RelativeLayout
                     android:id="@+id/factCard"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:background="#FFFDF4"
                     android:elevation="2dp"
-                    android:minHeight="200dp"
-                    android:orientation="vertical"
+                    android:minHeight="240dp"
                     android:padding="20dp">
 
+                    <!-- Star: top-right -->
                     <ImageView
                         android:id="@+id/imageViewStar"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:layout_gravity="end"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
                         android:src="@drawable/ic_star_outline" />
 
+                    <!-- Fact text: centered in the card -->
                     <TextView
                         android:id="@+id/textviewFact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_centerInParent="true"
                         android:gravity="center"
                         android:lineSpacingMultiplier="1.5"
                         android:textColor="#333333"
-                        android:textSize="15sp" />
+                        android:textSize="17sp"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="40dp" />
 
+                    <!-- Topic badge: bottom-left -->
                     <TextView
                         android:id="@+id/textviewTopic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="120dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
                         android:background="@drawable/badge"
                         android:paddingHorizontal="14dp"
                         android:paddingVertical="5dp"
                         android:textColor="#FFFFFF"
                         android:textSize="12sp"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
+                <!-- Tape strip: overlaid top-left corner of the card -->
                 <ImageView
                     android:layout_width="90dp"
                     android:layout_height="22dp"
@@ -215,23 +223,26 @@
 
             </RelativeLayout>
 
+            <!-- Next button: use ImageButton trick to guarantee icon shows -->
             <Button
                 android:id="@+id/btnNext"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginHorizontal="40dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="#FFD54F"
+                android:drawablePadding="8dp"
                 android:text="Next Fact"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp"
                 app:icon="@drawable/ic_next"
-                app:iconGravity="textEnd"
+                app:iconGravity="end"
                 app:iconPadding="8dp"
-                app:iconSize="32dp" />
+                app:iconSize="28dp"
+                app:iconTint="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>

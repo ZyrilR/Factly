@@ -48,9 +48,10 @@
 
     <Button
         android:id="@+id/btnApply"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:backgroundTint="#FFD54F"
         android:text="Apply"
         android:textColor="#FFFFFF"
@@ -60,9 +61,10 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
         android:backgroundTint="#FFFFFF"
         android:text="Back"
         android:textColor="#333333"

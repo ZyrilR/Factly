@@ -102,32 +102,14 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Show password + Forgot password row -->
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/checkBoxShowPassword"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
-
-            <CheckBox
-                android:id="@+id/checkBoxShowPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:text="Show Password"
-                android:textColor="#888888"
-                android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/textviewForgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="Forgot Password?"
-                android:textColor="#AAAAAA"
-                android:textSize="12sp" />
-        </RelativeLayout>
+            android:text="Show Password"
+            android:layout_gravity="end"
+            android:textColor="#888888"
+            android:textSize="13sp" />
 
         <!-- Sign in button -->
         <Button

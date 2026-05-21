@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Register Screen -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,70 +7,68 @@
     android:background="#FFFFFF"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingHorizontal="28dp"
         android:paddingTop="48dp"
         android:paddingBottom="40dp">
 
-        <ImageView
-            android:id="@+id/imageviewBack"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:padding="4dp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Top row: Logo + Back arrow -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageviewLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:layout_marginStart="10dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/logo"
-            app:layout_constraintBottom_toBottomOf="@id/imageviewBack"
-            app:layout_constraintStart_toEndOf="@id/imageviewBack"
-            app:layout_constraintTop_toTopOf="@id/imageviewBack" />
+            <ImageView
+                android:id="@+id/imageviewLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo" />
 
+            <ImageView
+                android:id="@+id/imageviewBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:src="@drawable/ic_back" />
+        </RelativeLayout>
+
+        <!-- Title -->
         <TextView
             android:id="@+id/textviewTitle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="Create Your Account"
             android:textColor="#000000"
             android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageviewBack" />
+            android:textStyle="bold" />
 
+        <!-- Subtitle -->
         <TextView
             android:id="@+id/textviewSubtitle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Start discovering interesting facts anytime."
             android:textColor="#888888"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textviewTitle" />
+            android:textSize="14sp" />
 
+        <!-- Full Name -->
         <LinearLayout
-            android:id="@+id/layoutFullName"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/input_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textviewSubtitle">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="18dp"
@@ -90,18 +89,15 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!-- Username -->
         <LinearLayout
-            android:id="@+id/layoutUsername"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/input_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutFullName">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="18dp"
@@ -122,18 +118,15 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!-- Email -->
         <LinearLayout
-            android:id="@+id/layoutEmail"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/input_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutUsername">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="18dp"
@@ -154,18 +147,15 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!-- Password -->
         <LinearLayout
-            android:id="@+id/layoutPassword"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/input_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutEmail">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="18dp"
@@ -186,18 +176,15 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!-- Confirm Password -->
         <LinearLayout
-            android:id="@+id/layoutConfirmPassword"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/input_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutPassword">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="18dp"
@@ -218,9 +205,10 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!-- Get Started button -->
         <Button
             android:id="@+id/buttonGetStarted"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="28dp"
             android:backgroundTint="#FFD54F"
@@ -228,20 +216,15 @@
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="26dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutConfirmPassword" />
+            app:cornerRadius="26dp" />
 
+        <!-- Login prompt -->
         <LinearLayout
-            android:id="@+id/layoutLoginPrompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonGetStarted">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -260,5 +243,5 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

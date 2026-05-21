@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -71,6 +73,23 @@ class DashboardActivity : Activity(), DashboardContract.View {
 
         presenter.loadFact()
     }
+
+    // ── Topic color map ───────────────────────────────────────────────────────
+
+    private fun getTopicColor(topic: String): Int = Color.parseColor(
+        when (topic) {
+            "Science"    -> "#4FC3F7"
+            "Sports"     -> "#81C784"
+            "Geography"  -> "#FF8A65"
+            "Technology" -> "#9575CD"
+            "Food"       -> "#FFD54F"
+            "Animals"    -> "#A5D6A7"
+            "Space"      -> "#7986CB"
+            "Human Body" -> "#F06292"
+            "History"    -> "#8D6E63"
+            else         -> "#BDBDBD"
+        }
+    )
 
     // ── Topic bottom-sheet overlay ────────────────────────────────────────────
 
@@ -198,8 +217,8 @@ class DashboardActivity : Activity(), DashboardContract.View {
     override fun displayFact(fact: Fact) {
         tvFact.text  = fact.content
         tvTopic.text = fact.topic
-        // Reset star to outline whenever a new fact loads
         imageViewStar.setImageResource(R.drawable.ic_star_outline)
+        tvTopic.backgroundTintList = ColorStateList.valueOf(getTopicColor(fact.topic))
     }
 
     override fun showSaved() {

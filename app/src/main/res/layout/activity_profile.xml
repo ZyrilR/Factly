@@ -170,13 +170,14 @@
                             android:layout_height="18dp"
                             android:src="@drawable/ic_user" />
 
-                        <EditText
-                            android:id="@+id/editTextFullName"
+                        <TextView
+                            android:id="@+id/textViewFullName"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:background="@null"
+                            android:gravity="center_vertical"
                             android:hint="Full Name"
                             android:inputType="textPersonName"
                             android:textColor="#333333"
@@ -208,13 +209,14 @@
                             android:layout_height="18dp"
                             android:src="@drawable/ic_email" />
 
-                        <EditText
-                            android:id="@+id/editTextEmail"
+                        <TextView
+                            android:id="@+id/textViewEmail"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:background="@null"
+                            android:gravity="center_vertical"
                             android:hint="Email"
                             android:inputType="textEmailAddress"
                             android:textColor="#333333"
@@ -246,13 +248,14 @@
                             android:layout_height="18dp"
                             android:src="@drawable/ic_lock" />
 
-                        <EditText
-                            android:id="@+id/editTextPassword"
+                        <TextView
+                            android:id="@+id/textViewPassword"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:background="@null"
+                            android:gravity="center_vertical"
                             android:hint="Password"
                             android:inputType="textPassword"
                             android:textColor="#333333"

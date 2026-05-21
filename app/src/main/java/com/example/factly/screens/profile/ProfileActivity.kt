@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -16,9 +15,9 @@ import com.example.factly.screens.login.LoginActivity
 class ProfileActivity : Activity(), ProfileContract.View {
 
     private lateinit var presenter: ProfilePresenter
-    private lateinit var etFullName: EditText
-    private lateinit var etEmail: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var tvFullName: TextView
+    private lateinit var tvEmail: TextView
+    private lateinit var tvPassword: TextView
     private lateinit var tvDisplayName: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,9 +25,9 @@ class ProfileActivity : Activity(), ProfileContract.View {
         setContentView(R.layout.activity_profile)
 
         presenter     = ProfilePresenter(this)
-        etFullName    = findViewById(R.id.editTextFullName)
-        etEmail       = findViewById(R.id.editTextEmail)
-        etPassword    = findViewById(R.id.editTextPassword)
+        tvFullName    = findViewById(R.id.textViewFullName)
+        tvEmail       = findViewById(R.id.textViewEmail)
+        tvPassword    = findViewById(R.id.textViewPassword)
         tvDisplayName = findViewById(R.id.textviewDisplayName)
 
         findViewById<Button>(R.id.buttonProfile).setOnClickListener {
@@ -52,9 +51,9 @@ class ProfileActivity : Activity(), ProfileContract.View {
 
     override fun showUserInfo(username: String, email: String, password: String) {
         tvDisplayName.text = username
-        etFullName.setText(username)
-        etEmail.setText(email)
-        etPassword.setText(password)
+        tvFullName.text    = username
+        tvEmail.text       = email
+        tvPassword.text    = password
     }
 
     override fun showError(message: String) =

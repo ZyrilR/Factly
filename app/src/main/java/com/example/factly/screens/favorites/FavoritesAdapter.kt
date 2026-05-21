@@ -44,7 +44,7 @@ class FavoritesAdapter(
         tvContent.text = fact.content
 
         // Apply topic color to badge background
-        tvTopic.background.mutate().setTint(getTopicColor(fact.topic))
+        tvTopic.backgroundTintList = android.content.res.ColorStateList.valueOf(getTopicColor(fact.topic))
 
         view.setOnClickListener     { onItemClick(fact) }
         view.setOnLongClickListener { onItemLongClick(position); true }

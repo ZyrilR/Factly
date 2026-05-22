@@ -43,7 +43,6 @@ class FavoritesAdapter(
 
     override fun getItemCount(): Int = facts.size
 
-    /** Replace full list (e.g. search filter or post-remove refresh). */
     fun submitList(newFacts: List<Fact>) {
         facts.clear()
         facts.addAll(newFacts)

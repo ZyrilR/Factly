@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -19,16 +20,26 @@ class ProfileActivity : Activity(), ProfileContract.View {
     private lateinit var tvEmail: TextView
     private lateinit var tvPassword: TextView
     private lateinit var tvDisplayName: TextView
+    private lateinit var cbShowPassword: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        presenter     = ProfilePresenter(this)
-        tvFullName    = findViewById(R.id.textViewFullName)
-        tvEmail       = findViewById(R.id.textViewEmail)
-        tvPassword    = findViewById(R.id.textViewPassword)
-        tvDisplayName = findViewById(R.id.textviewDisplayName)
+        presenter      = ProfilePresenter(this)
+        tvFullName     = findViewById(R.id.textViewFullName)
+        tvEmail        = findViewById(R.id.textViewEmail)
+        tvPassword     = findViewById(R.id.textViewPassword)
+        tvDisplayName  = findViewById(R.id.textviewDisplayName)
+        cbShowPassword = findViewById(R.id.checkBoxShowPassword)
+
+        cbShowPassword.setOnCheckedChangeListener { _, isChecked ->
+            tvPassword.inputType = if (isChecked) {
+                android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+        }
 
         findViewById<Button>(R.id.buttonProfile).setOnClickListener {
             presenter.onBackClicked()

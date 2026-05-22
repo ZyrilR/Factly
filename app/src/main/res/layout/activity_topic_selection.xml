@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Choose Your Favorite Topics"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_marginTop="4dp"
         android:text="Select the categories you want to see in your fact feed.\nYou can change these anytime."
         android:textColor="#666666"
-        android:textSize="13sp"
+        android:textSize="14sp"
         android:lineSpacingMultiplier="1.4" />
 
     <GridLayout
@@ -47,7 +47,7 @@
         android:id="@+id/btnApply"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="18dp"
         android:layout_gravity="center"
         android:background="@drawable/button_rounded_yellow"
         app:backgroundTint="@null"
@@ -61,6 +61,7 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="6dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
         android:background="@drawable/button_rounded_white"
         app:backgroundTint="@null"

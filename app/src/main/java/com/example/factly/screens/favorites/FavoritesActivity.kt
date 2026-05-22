@@ -91,8 +91,6 @@ class FavoritesActivity : Activity(), FavoritesContract.View {
         presenter.loadFavorites()
     }
 
-    // ── FavoritesContract.View ────────────────────────────────────────────────
-
     override fun showFavorites(facts: List<Fact>) {
         adapter.submitList(facts)
     }
@@ -178,8 +176,6 @@ class FavoritesActivity : Activity(), FavoritesContract.View {
         presenter.onDestroy()
         super.onDestroy()
     }
-
-    // ── Helpers ───────────────────────────────────────────────────────────────
 
     private fun getTopicColor(topic: String): Int = Color.parseColor(
         when (topic) {

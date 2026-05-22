@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Profile Screen -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFAFAFA">
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rounded_footer_bg"
         android:elevation="12dp"
@@ -118,13 +116,11 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Avatar + white rounded card (one block) -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-85dp">
 
-                <!-- White rounded-top card with all form content inside -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -135,7 +131,6 @@
                     android:paddingTop="70dp"
                     android:paddingBottom="24dp">
 
-                    <!-- Display name -->
                     <TextView
                         android:id="@+id/textviewDisplayName"
                         android:layout_width="wrap_content"
@@ -147,7 +142,6 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <!-- Full Name label -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -155,7 +149,6 @@
                         android:textColor="#888888"
                         android:textSize="14sp" />
 
-                    <!-- Full Name field -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
@@ -194,7 +187,6 @@
                         android:textColor="#888888"
                         android:textSize="14sp" />
 
-                    <!-- Email field -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
@@ -224,7 +216,6 @@
                             android:textSize="15sp" />
                     </LinearLayout>
 
-                    <!-- Password label -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -233,7 +224,6 @@
                         android:textColor="#888888"
                         android:textSize="14sp" />
 
-                    <!-- Password field -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
@@ -261,31 +251,47 @@
                             android:textColor="#333333"
                             android:textColorHint="#BBBBBB"
                             android:textSize="15sp" />
+
                     </LinearLayout>
 
-                    <!-- Back to Dashboard button -->
+                    <CheckBox
+                        android:id="@+id/checkBoxShowPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="2dp"
+                        android:text="Show Password"
+                        android:textColor="#888888"
+                        android:textSize="13sp" />
+
                     <Button
                         android:id="@+id/buttonProfile"
-                        android:layout_width="250dp"
+                        android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginHorizontal="40dp"
                         android:layout_gravity="center"
                         android:background="@drawable/button_rounded_yellow"
                         app:backgroundTint="@null"
+                        android:elevation="2dp"
+                        android:stateListAnimator="@null"
                         android:text="Back to Dashboard"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <!-- Log out button -->
                     <Button
                         android:id="@+id/buttonLogout"
-                        android:layout_width="250dp"
+                        android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="40dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="8dp"
                         android:layout_gravity="center"
                         android:background="@drawable/button_rounded_white"
                         app:backgroundTint="@null"
+                        android:elevation="1dp"
+                        android:stateListAnimator="@null"
                         android:text="Log out"
                         android:textColor="#FFD54F"
                         android:textSize="16sp"
@@ -293,7 +299,6 @@
 
                 </LinearLayout>
 
-                <!-- Avatar drawn on top, centered on the seam -->
                 <ImageView
                     android:id="@+id/imageviewProfileCircle"
                     android:layout_width="130dp"
@@ -305,8 +310,8 @@
                     android:src="@drawable/ic_person"
                     android:paddingTop="24dp"
                     android:paddingBottom="24dp"
-                    android:paddingStart="26dp"
-                    android:paddingEnd="16dp" />
+                    android:paddingStart="30dp"
+                    android:paddingEnd="16dp"/>
 
             </RelativeLayout>
 

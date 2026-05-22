@@ -55,7 +55,7 @@ class DashboardActivity : Activity(), DashboardContract.View {
         val user = UserRepository.getLoggedInUser()
         if (user != null) tvWelcome.text = "Welcome, ${user.username}!"
 
-        findViewById<Button>(R.id.btnNext).setOnClickListener {
+        findViewById<LinearLayout>(R.id.btnNext).setOnClickListener {
             presenter.onNextClicked()
         }
         imageViewStar.setOnClickListener {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Fact Detail Overlay — centered dialog with white rounded card -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -22,7 +21,6 @@
             android:orientation="vertical"
             android:padding="28dp">
 
-            <!-- Topic badge row: badge left, unfavorite star right -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -51,7 +49,6 @@
 
             </RelativeLayout>
 
-            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -59,7 +56,6 @@
                 android:layout_marginBottom="4dp"
                 android:background="#EEEEEE" />
 
-            <!-- Fact content -->
             <TextView
                 android:id="@+id/textViewDetailFact"
                 android:layout_width="match_parent"
@@ -70,7 +66,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- "Did you know?" label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +75,6 @@
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
-            <!-- Expanded info -->
             <TextView
                 android:id="@+id/textViewDetailExpanded"
                 android:layout_width="match_parent"
@@ -90,18 +84,17 @@
                 android:textColor="#444444"
                 android:textSize="14sp" />
 
-            <!-- Close button -->
             <Button
                 android:id="@+id/buttonCloseDetail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="#FFD54F"
+                android:background="@drawable/button_rounded_yellow"
+                app:backgroundTint="@null"
                 android:text="Got it!"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

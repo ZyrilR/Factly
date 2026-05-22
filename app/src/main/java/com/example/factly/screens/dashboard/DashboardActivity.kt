@@ -179,8 +179,8 @@ class DashboardActivity : Activity(), DashboardContract.View {
             val chip = TextView(this).apply {
                 text    = topic
                 gravity = Gravity.CENTER
-                setPadding(16, 14, 16, 14)
-                textSize = 12.5f
+                setPadding(20, 18, 20, 18)
+                textSize = 13f
                 layoutParams = GridLayout.LayoutParams().apply {
                     width      = 0
                     columnSpec = GridLayout.spec(index % columns, 1f)

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Register Screen -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         android:paddingTop="32dp"
         android:paddingBottom="40dp">
 
-        <!-- Top row: Logo + Back arrow -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -40,7 +38,6 @@
                 android:src="@drawable/ic_back" />
         </RelativeLayout>
 
-        <!-- Title -->
         <TextView
             android:id="@+id/textviewTitle"
             android:layout_width="wrap_content"
@@ -51,7 +48,6 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <!-- Subtitle -->
         <TextView
             android:id="@+id/textviewSubtitle"
             android:layout_width="wrap_content"
@@ -61,7 +57,6 @@
             android:textColor="#888888"
             android:textSize="14sp" />
 
-        <!-- Full Name -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -90,7 +85,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Username -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -119,7 +113,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Email -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -148,7 +141,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Password -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -177,7 +169,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Confirm Password -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -206,20 +197,18 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!-- Get Started button -->
         <Button
             android:id="@+id/buttonGetStarted"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="28dp"
-            android:backgroundTint="#FFD54F"
+            android:background="@drawable/button_rounded_yellow"
+            app:backgroundTint="@null"
             android:text="Get Started"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="26dp" />
+            android:textStyle="bold" />
 
-        <!-- Login prompt -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

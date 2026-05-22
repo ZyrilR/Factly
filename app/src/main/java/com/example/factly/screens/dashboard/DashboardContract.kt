@@ -7,6 +7,7 @@ interface DashboardContract {
     interface View {
         fun displayFact(fact: Fact)
         fun showSaved()
+        fun showStarOutline()
         fun showError(message: String)
         fun navigateToProfile()
         fun navigateToFavorites()

@@ -10,7 +10,11 @@ class FavoritesPresenter(private var view: FavoritesContract.View?) : FavoritesC
     }
 
     override fun onFactClicked(fact: Fact) {
-        view?.showMessage("${fact.topic}: ${fact.content}")
+        view?.showFactDetail(fact)
+    }
+
+    override fun onRemoveClicked(position: Int) {
+        view?.showRemoveConfirmation(position)
     }
 
     override fun removeFavorite(position: Int) {

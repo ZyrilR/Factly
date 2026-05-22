@@ -18,12 +18,16 @@ class DashboardPresenter(private var view: DashboardContract.View?) : DashboardC
     }
 
     override fun onSaveClicked() {
-        val fact = currentFact
-        if (fact != null) {
+        val fact = currentFact ?: run {
+            view?.showError("No fact to save")
+            return
+        }
+        if (FactRepository.isFavorite(fact)) {
+            FactRepository.removeFavoriteByFact(fact)
+            view?.showStarOutline()
+        } else {
             FactRepository.saveFavorite(fact)
             view?.showSaved()
-        } else {
-            view?.showError("No fact to save")
         }
     }
 

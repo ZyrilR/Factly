@@ -6,6 +6,8 @@ interface FavoritesContract {
 
     interface View {
         fun showFavorites(facts: List<Fact>)
+        fun showFactDetail(fact: Fact)
+        fun showRemoveConfirmation(position: Int)
         fun showMessage(message: String)
         fun refreshList()
     }
@@ -13,6 +15,7 @@ interface FavoritesContract {
     interface Presenter {
         fun loadFavorites()
         fun onFactClicked(fact: Fact)
+        fun onRemoveClicked(position: Int)
         fun removeFavorite(position: Int)
         fun onDestroy()
     }

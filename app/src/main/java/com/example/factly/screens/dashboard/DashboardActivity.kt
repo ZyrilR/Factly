@@ -217,13 +217,23 @@ class DashboardActivity : Activity(), DashboardContract.View {
     override fun displayFact(fact: Fact) {
         tvFact.text  = fact.content
         tvTopic.text = fact.topic
-        imageViewStar.setImageResource(R.drawable.ic_star_outline)
         tvTopic.backgroundTintList = ColorStateList.valueOf(getTopicColor(fact.topic))
+        // Reflect saved state whenever a fact is displayed
+        if (FactRepository.isFavorite(fact)) {
+            imageViewStar.setImageResource(R.drawable.ic_star_filled)
+        } else {
+            imageViewStar.setImageResource(R.drawable.ic_star_outline)
+        }
     }
 
     override fun showSaved() {
         imageViewStar.setImageResource(R.drawable.ic_star_filled)
         Toast.makeText(this, "Saved to Favorites!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showStarOutline() {
+        imageViewStar.setImageResource(R.drawable.ic_star_outline)
+        Toast.makeText(this, "Removed from Favorites.", Toast.LENGTH_SHORT).show()
     }
 
     override fun showError(message: String) =

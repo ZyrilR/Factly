@@ -1,21 +1,54 @@
 package com.example.factly.screens.favorites
 
-import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.factly.R
 import com.example.factly.data.models.Fact
 
 class FavoritesAdapter(
-    context: Context,
-    private val facts: ArrayList<Fact>,
+    private val facts: MutableList<Fact>,
     private val onItemClick: (Fact) -> Unit,
     private val onItemLongClick: (Int) -> Unit
-) : ArrayAdapter<Fact>(context, R.layout.list_item_favorite, facts) {
+) : RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvTopic: TextView   = view.findViewById(R.id.textViewTopic)
+        val tvContent: TextView = view.findViewById(R.id.textViewContent)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.list_item_favorite, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val fact = facts[position]
+        holder.tvTopic.text   = fact.topic
+        holder.tvContent.text = fact.content
+        holder.tvTopic.backgroundTintList =
+            ColorStateList.valueOf(getTopicColor(fact.topic))
+
+        holder.itemView.setOnClickListener     { onItemClick(fact) }
+        holder.itemView.setOnLongClickListener {
+            onItemLongClick(holder.adapterPosition)
+            true
+        }
+    }
+
+    override fun getItemCount(): Int = facts.size
+
+    /** Replace full list (e.g. search filter or post-remove refresh). */
+    fun submitList(newFacts: List<Fact>) {
+        facts.clear()
+        facts.addAll(newFacts)
+        notifyDataSetChanged()
+    }
 
     private fun getTopicColor(topic: String): Int = Color.parseColor(
         when (topic) {
@@ -31,24 +64,4 @@ class FavoritesAdapter(
             else         -> "#BDBDBD"
         }
     )
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: LayoutInflater.from(context)
-            .inflate(R.layout.list_item_favorite, parent, false)
-
-        val fact = facts[position]
-        val tvTopic   = view.findViewById<TextView>(R.id.textViewTopic)
-        val tvContent = view.findViewById<TextView>(R.id.textViewContent)
-
-        tvTopic.text = fact.topic
-        tvContent.text = fact.content
-
-        // Apply topic color to badge background
-        tvTopic.backgroundTintList = android.content.res.ColorStateList.valueOf(getTopicColor(fact.topic))
-
-        view.setOnClickListener     { onItemClick(fact) }
-        view.setOnLongClickListener { onItemLongClick(position); true }
-
-        return view
-    }
 }
